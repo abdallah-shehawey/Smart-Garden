@@ -10,6 +10,7 @@ C_SRCS += \
 ../Src/EEPROM_prog.c \
 ../Src/EXTI_prog.c \
 ../Src/GIE_prog.c \
+../Src/SECURITY_prog.c \
 ../Src/System_init.c \
 ../Src/USART_prog.c \
 ../Src/main.c 
@@ -21,6 +22,7 @@ OBJS += \
 ./Src/EEPROM_prog.o \
 ./Src/EXTI_prog.o \
 ./Src/GIE_prog.o \
+./Src/SECURITY_prog.o \
 ./Src/System_init.o \
 ./Src/USART_prog.o \
 ./Src/main.o 
@@ -32,6 +34,7 @@ C_DEPS += \
 ./Src/EEPROM_prog.d \
 ./Src/EXTI_prog.d \
 ./Src/GIE_prog.d \
+./Src/SECURITY_prog.d \
 ./Src/System_init.d \
 ./Src/USART_prog.d \
 ./Src/main.d 

@@ -23,7 +23,7 @@
  * 1. USART_1X
  * 2. USART_2X  (Double Speed Mode)
  */
-#define USART_SYSTEM_SPEED                      USART_1X
+#define USART_SYSTEM_SPEED                      USART_2X
 
 /*Set Timeout for Your functions*/
 #define USART_u32TIMEOUT                         10000UL
