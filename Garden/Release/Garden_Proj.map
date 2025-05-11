@@ -63,7 +63,7 @@ Allocating common symbols
 Common symbol       size              file
 
 Check               0x15              ./Src/SECURITY_prog.o
-KPD_Press           0x1               ./Src/SECURITY_prog.o
+KPD_Press           0x1               ./Src/Garden.o
 UserName            0x14              ./Src/SECURITY_prog.o
 
 Memory Configuration
@@ -87,6 +87,7 @@ LOAD ./Src/DIO_prog.o
 LOAD ./Src/EEPROM_prog.o
 LOAD ./Src/EXTI_prog.o
 LOAD ./Src/GIE_prog.o
+LOAD ./Src/Garden.o
 LOAD ./Src/LDR_prog.o
 LOAD ./Src/LM35_prog.o
 LOAD ./Src/SECURITY_prog.o
@@ -94,7 +95,6 @@ LOAD ./Src/Servo_Motor_prog.o
 LOAD ./Src/System_init.o
 LOAD ./Src/TIMER_program.o
 LOAD ./Src/USART_prog.o
-LOAD ./Src/main.o
 START GROUP
 LOAD /usr/lib/gcc/avr/7.3.0/avr5/libgcc.a
 LOAD /usr/lib/gcc/avr/7.3.0/../../../avr/lib/avr5/libm.a
@@ -273,6 +273,7 @@ END GROUP
  .text          0x0000000000000092        0x0 ./Src/EEPROM_prog.o
  .text          0x0000000000000092        0x0 ./Src/EXTI_prog.o
  .text          0x0000000000000092        0x0 ./Src/GIE_prog.o
+ .text          0x0000000000000092        0x0 ./Src/Garden.o
  .text          0x0000000000000092        0x0 ./Src/LDR_prog.o
  .text          0x0000000000000092        0x0 ./Src/LM35_prog.o
  .text          0x0000000000000092        0x0 ./Src/SECURITY_prog.o
@@ -280,7 +281,6 @@ END GROUP
  .text          0x0000000000000092        0x0 ./Src/System_init.o
  .text          0x0000000000000092        0x0 ./Src/TIMER_program.o
  .text          0x0000000000000092        0x0 ./Src/USART_prog.o
- .text          0x0000000000000092        0x0 ./Src/main.o
  .text          0x0000000000000092        0x0 /usr/lib/gcc/avr/7.3.0/avr5/libgcc.a(_udivmodhi4.o)
  .text          0x0000000000000092        0x0 /usr/lib/gcc/avr/7.3.0/avr5/libgcc.a(_udivmodsi4.o)
  .text          0x0000000000000092        0x0 /usr/lib/gcc/avr/7.3.0/avr5/libgcc.a(_divmodsi4.o)
@@ -467,191 +467,191 @@ END GROUP
  .text.GIE_vDisable
                 0x0000000000000e12        0x8 ./Src/GIE_prog.o
                 0x0000000000000e12                GIE_vDisable
- .text.LDR_u8GetLightPres
-                0x0000000000000e1a       0x86 ./Src/LDR_prog.o
-                0x0000000000000e1a                LDR_u8GetLightPres
- .text.LM35_u8GetTemp
-                0x0000000000000ea0       0xa0 ./Src/LM35_prog.o
-                0x0000000000000ea0                LM35_u8GetTemp
- .text.LM35_u8GetAnalogSignal
-                0x0000000000000f40       0x8e ./Src/LM35_prog.o
-                0x0000000000000f40                LM35_u8GetAnalogSignal
- .text.UserName_Set
-                0x0000000000000fce      0x16c ./Src/SECURITY_prog.o
-                0x0000000000000fce                UserName_Set
- .text.PassWord_Set
-                0x000000000000113a      0x14c ./Src/SECURITY_prog.o
-                0x000000000000113a                PassWord_Set
- .text.UserName_Check
-                0x0000000000001286      0x102 ./Src/SECURITY_prog.o
-                0x0000000000001286                UserName_Check
- .text.PassWord_Check
-                0x0000000000001388      0x104 ./Src/SECURITY_prog.o
-                0x0000000000001388                PassWord_Check
- .text.Error_TimeOut
-                0x000000000000148c       0x4a ./Src/SECURITY_prog.o
-                0x000000000000148c                Error_TimeOut
- .text.EEPROM_vInit
-                0x00000000000014d6       0xa8 ./Src/SECURITY_prog.o
-                0x00000000000014d6                EEPROM_vInit
- .text.Sign_In  0x000000000000157e       0xa2 ./Src/SECURITY_prog.o
-                0x000000000000157e                Sign_In
- .text.SM_vInit
-                0x0000000000001620        0xa ./Src/Servo_Motor_prog.o
-                0x0000000000001620                SM_vInit
- .text.SM_vTimer1Degree
-                0x000000000000162a       0x40 ./Src/Servo_Motor_prog.o
-                0x000000000000162a                SM_vTimer1Degree
- .text.System_vInit
-                0x000000000000166a       0x92 ./Src/System_init.o
-                0x000000000000166a                System_vInit
- .text.TIMER0_vInit
-                0x00000000000016fc       0x26 ./Src/TIMER_program.o
-                0x00000000000016fc                TIMER0_vInit
- .text.TIMER1_vInit
-                0x0000000000001722       0x6c ./Src/TIMER_program.o
-                0x0000000000001722                TIMER1_vInit
- .text.TIMER2_vInit
-                0x000000000000178e       0x28 ./Src/TIMER_program.o
-                0x000000000000178e                TIMER2_vInit
- .text.TIMER0_vSetPreload
-                0x00000000000017b6        0x4 ./Src/TIMER_program.o
-                0x00000000000017b6                TIMER0_vSetPreload
- .text.TIMER1_vSetPreload
-                0x00000000000017ba        0x6 ./Src/TIMER_program.o
-                0x00000000000017ba                TIMER1_vSetPreload
- .text.TIMER2_vSetPreload
-                0x00000000000017c0        0x4 ./Src/TIMER_program.o
-                0x00000000000017c0                TIMER2_vSetPreload
- .text.TIMER0_vSetCTC
-                0x00000000000017c4        0x4 ./Src/TIMER_program.o
-                0x00000000000017c4                TIMER0_vSetCTC
- .text.TIMER1_vSetCTCA
-                0x00000000000017c8        0x6 ./Src/TIMER_program.o
-                0x00000000000017c8                TIMER1_vSetCTCA
- .text.TIMER1_vSetCTCB
-                0x00000000000017ce        0x6 ./Src/TIMER_program.o
-                0x00000000000017ce                TIMER1_vSetCTCB
- .text.TIMER2_vSetCTC
-                0x00000000000017d4        0x4 ./Src/TIMER_program.o
-                0x00000000000017d4                TIMER2_vSetCTC
- .text.TIMER1_vSetICR1
-                0x00000000000017d8        0x6 ./Src/TIMER_program.o
-                0x00000000000017d8                TIMER1_vSetICR1
- .text.TIMER0_u8GetTimerCounterValue
-                0x00000000000017de        0x4 ./Src/TIMER_program.o
-                0x00000000000017de                TIMER0_u8GetTimerCounterValue
- .text.TIMER1_u16GetTimerCounterValue
-                0x00000000000017e2        0x6 ./Src/TIMER_program.o
-                0x00000000000017e2                TIMER1_u16GetTimerCounterValue
- .text.TIMER2_u8GetTimerCounterValue
-                0x00000000000017e8        0x4 ./Src/TIMER_program.o
-                0x00000000000017e8                TIMER2_u8GetTimerCounterValue
- .text.TIMER_vSetPWM
-                0x00000000000017ec        0x6 ./Src/TIMER_program.o
-                0x00000000000017ec                TIMER_vSetPWM
- .text.Timer2_vSetPrescaler
-                0x00000000000017f2        0xe ./Src/TIMER_program.o
-                0x00000000000017f2                Timer2_vSetPrescaler
- .text.Timer0_vSetPrescaler
-                0x0000000000001800        0xe ./Src/TIMER_program.o
-                0x0000000000001800                Timer0_vSetPrescaler
- .text.TIMER_vICUInitEnable
-                0x000000000000180e        0xe ./Src/TIMER_program.o
-                0x000000000000180e                TIMER_vICUInitEnable
- .text.TIMER_vICUSetTriggerEdge
-                0x000000000000181c       0x1e ./Src/TIMER_program.o
-                0x000000000000181c                TIMER_vICUSetTriggerEdge
- .text.TIMER_vICUEnableInterrupt
-                0x000000000000183a        0x8 ./Src/TIMER_program.o
-                0x000000000000183a                TIMER_vICUEnableInterrupt
- .text.TIMER_vICUDisableInterrupt
-                0x0000000000001842        0x8 ./Src/TIMER_program.o
-                0x0000000000001842                TIMER_vICUDisableInterrupt
- .text.TIMER_u16GetICR
-                0x000000000000184a        0x6 ./Src/TIMER_program.o
-                0x000000000000184a                TIMER_u16GetICR
- .text.TIMER_vWDTSleep
-                0x0000000000001850        0xe ./Src/TIMER_program.o
-                0x0000000000001850                TIMER_vWDTSleep
- .text.TIMER_vWDTEnable
-                0x000000000000185e        0x8 ./Src/TIMER_program.o
-                0x000000000000185e                TIMER_vWDTEnable
- .text.TIMER_vWDTDisable
-                0x0000000000001866        0xa ./Src/TIMER_program.o
-                0x0000000000001866                TIMER_vWDTDisable
- .text.TIMER_u8SetCallBack
-                0x0000000000001870       0x1c ./Src/TIMER_program.o
-                0x0000000000001870                TIMER_u8SetCallBack
- .text.__vector_11
-                0x000000000000188c       0x52 ./Src/TIMER_program.o
-                0x000000000000188c                __vector_11
- .text.__vector_10
-                0x00000000000018de       0x52 ./Src/TIMER_program.o
-                0x00000000000018de                __vector_10
- .text.__vector_9
-                0x0000000000001930       0x52 ./Src/TIMER_program.o
-                0x0000000000001930                __vector_9
- .text.__vector_8
-                0x0000000000001982       0x52 ./Src/TIMER_program.o
-                0x0000000000001982                __vector_8
- .text.__vector_7
-                0x00000000000019d4       0x52 ./Src/TIMER_program.o
-                0x00000000000019d4                __vector_7
- .text.__vector_6
-                0x0000000000001a26       0x52 ./Src/TIMER_program.o
-                0x0000000000001a26                __vector_6
- .text.__vector_5
-                0x0000000000001a78       0x52 ./Src/TIMER_program.o
-                0x0000000000001a78                __vector_5
- .text.__vector_4
-                0x0000000000001aca       0x52 ./Src/TIMER_program.o
-                0x0000000000001aca                __vector_4
- .text.USART_vInit
-                0x0000000000001b1c       0x1c ./Src/USART_prog.o
-                0x0000000000001b1c                USART_vInit
- .text.USART_u8SendData
-                0x0000000000001b38       0x4a ./Src/USART_prog.o
-                0x0000000000001b38                USART_u8SendData
- .text.USART_u8ReceiveData
-                0x0000000000001b82       0x54 ./Src/USART_prog.o
-                0x0000000000001b82                USART_u8ReceiveData
- .text.USART_u8SendStringSynch
-                0x0000000000001bd6       0x22 ./Src/USART_prog.o
-                0x0000000000001bd6                USART_u8SendStringSynch
- .text.USART_u8SendStringAsynch
-                0x0000000000001bf8       0x3e ./Src/USART_prog.o
-                0x0000000000001bf8                USART_u8SendStringAsynch
- .text.USART_u8ReceiveBufferSynch
-                0x0000000000001c36       0x64 ./Src/USART_prog.o
-                0x0000000000001c36                USART_u8ReceiveBufferSynch
- .text.USART_u8ReceiveBufferAsynch
-                0x0000000000001c9a       0x40 ./Src/USART_prog.o
-                0x0000000000001c9a                USART_u8ReceiveBufferAsynch
- .text.__vector_13
-                0x0000000000001cda       0x7e ./Src/USART_prog.o
-                0x0000000000001cda                __vector_13
- .text.__vector_15
-                0x0000000000001d58       0x7e ./Src/USART_prog.o
-                0x0000000000001d58                __vector_15
  .text.Display_Show
-                0x0000000000001dd6      0x1f4 ./Src/main.o
-                0x0000000000001dd6                Display_Show
+                0x0000000000000e1a      0x1f4 ./Src/Garden.o
+                0x0000000000000e1a                Display_Show
  .text.Garden_vDoor
-                0x0000000000001fca       0x94 ./Src/main.o
-                0x0000000000001fca                Garden_vDoor
+                0x000000000000100e       0x94 ./Src/Garden.o
+                0x000000000000100e                Garden_vDoor
  .text.Enter_Sys
-                0x000000000000205e       0x56 ./Src/main.o
-                0x000000000000205e                Enter_Sys
+                0x00000000000010a2       0x56 ./Src/Garden.o
+                0x00000000000010a2                Enter_Sys
  .text.startup.main
-                0x00000000000020b4       0xb2 ./Src/main.o
-                0x00000000000020b4                main
+                0x00000000000010f8       0xb2 ./Src/Garden.o
+                0x00000000000010f8                main
  .text.ISR_EXTI0_INT
-                0x0000000000002166       0x12 ./Src/main.o
-                0x0000000000002166                ISR_EXTI0_INT
+                0x00000000000011aa       0x12 ./Src/Garden.o
+                0x00000000000011aa                ISR_EXTI0_INT
  .text.ISR_EXTI1_INT
-                0x0000000000002178        0xa ./Src/main.o
-                0x0000000000002178                ISR_EXTI1_INT
+                0x00000000000011bc        0xa ./Src/Garden.o
+                0x00000000000011bc                ISR_EXTI1_INT
+ .text.LDR_u8GetLightPres
+                0x00000000000011c6       0x86 ./Src/LDR_prog.o
+                0x00000000000011c6                LDR_u8GetLightPres
+ .text.LM35_u8GetTemp
+                0x000000000000124c       0xa0 ./Src/LM35_prog.o
+                0x000000000000124c                LM35_u8GetTemp
+ .text.LM35_u8GetAnalogSignal
+                0x00000000000012ec       0x8e ./Src/LM35_prog.o
+                0x00000000000012ec                LM35_u8GetAnalogSignal
+ .text.UserName_Set
+                0x000000000000137a      0x16c ./Src/SECURITY_prog.o
+                0x000000000000137a                UserName_Set
+ .text.PassWord_Set
+                0x00000000000014e6      0x14c ./Src/SECURITY_prog.o
+                0x00000000000014e6                PassWord_Set
+ .text.UserName_Check
+                0x0000000000001632      0x102 ./Src/SECURITY_prog.o
+                0x0000000000001632                UserName_Check
+ .text.PassWord_Check
+                0x0000000000001734      0x104 ./Src/SECURITY_prog.o
+                0x0000000000001734                PassWord_Check
+ .text.Error_TimeOut
+                0x0000000000001838       0x4a ./Src/SECURITY_prog.o
+                0x0000000000001838                Error_TimeOut
+ .text.EEPROM_vInit
+                0x0000000000001882       0xa8 ./Src/SECURITY_prog.o
+                0x0000000000001882                EEPROM_vInit
+ .text.Sign_In  0x000000000000192a       0xa2 ./Src/SECURITY_prog.o
+                0x000000000000192a                Sign_In
+ .text.SM_vInit
+                0x00000000000019cc        0xa ./Src/Servo_Motor_prog.o
+                0x00000000000019cc                SM_vInit
+ .text.SM_vTimer1Degree
+                0x00000000000019d6       0x40 ./Src/Servo_Motor_prog.o
+                0x00000000000019d6                SM_vTimer1Degree
+ .text.System_vInit
+                0x0000000000001a16       0x92 ./Src/System_init.o
+                0x0000000000001a16                System_vInit
+ .text.TIMER0_vInit
+                0x0000000000001aa8       0x26 ./Src/TIMER_program.o
+                0x0000000000001aa8                TIMER0_vInit
+ .text.TIMER1_vInit
+                0x0000000000001ace       0x6c ./Src/TIMER_program.o
+                0x0000000000001ace                TIMER1_vInit
+ .text.TIMER2_vInit
+                0x0000000000001b3a       0x28 ./Src/TIMER_program.o
+                0x0000000000001b3a                TIMER2_vInit
+ .text.TIMER0_vSetPreload
+                0x0000000000001b62        0x4 ./Src/TIMER_program.o
+                0x0000000000001b62                TIMER0_vSetPreload
+ .text.TIMER1_vSetPreload
+                0x0000000000001b66        0x6 ./Src/TIMER_program.o
+                0x0000000000001b66                TIMER1_vSetPreload
+ .text.TIMER2_vSetPreload
+                0x0000000000001b6c        0x4 ./Src/TIMER_program.o
+                0x0000000000001b6c                TIMER2_vSetPreload
+ .text.TIMER0_vSetCTC
+                0x0000000000001b70        0x4 ./Src/TIMER_program.o
+                0x0000000000001b70                TIMER0_vSetCTC
+ .text.TIMER1_vSetCTCA
+                0x0000000000001b74        0x6 ./Src/TIMER_program.o
+                0x0000000000001b74                TIMER1_vSetCTCA
+ .text.TIMER1_vSetCTCB
+                0x0000000000001b7a        0x6 ./Src/TIMER_program.o
+                0x0000000000001b7a                TIMER1_vSetCTCB
+ .text.TIMER2_vSetCTC
+                0x0000000000001b80        0x4 ./Src/TIMER_program.o
+                0x0000000000001b80                TIMER2_vSetCTC
+ .text.TIMER1_vSetICR1
+                0x0000000000001b84        0x6 ./Src/TIMER_program.o
+                0x0000000000001b84                TIMER1_vSetICR1
+ .text.TIMER0_u8GetTimerCounterValue
+                0x0000000000001b8a        0x4 ./Src/TIMER_program.o
+                0x0000000000001b8a                TIMER0_u8GetTimerCounterValue
+ .text.TIMER1_u16GetTimerCounterValue
+                0x0000000000001b8e        0x6 ./Src/TIMER_program.o
+                0x0000000000001b8e                TIMER1_u16GetTimerCounterValue
+ .text.TIMER2_u8GetTimerCounterValue
+                0x0000000000001b94        0x4 ./Src/TIMER_program.o
+                0x0000000000001b94                TIMER2_u8GetTimerCounterValue
+ .text.TIMER_vSetPWM
+                0x0000000000001b98        0x6 ./Src/TIMER_program.o
+                0x0000000000001b98                TIMER_vSetPWM
+ .text.Timer2_vSetPrescaler
+                0x0000000000001b9e        0xe ./Src/TIMER_program.o
+                0x0000000000001b9e                Timer2_vSetPrescaler
+ .text.Timer0_vSetPrescaler
+                0x0000000000001bac        0xe ./Src/TIMER_program.o
+                0x0000000000001bac                Timer0_vSetPrescaler
+ .text.TIMER_vICUInitEnable
+                0x0000000000001bba        0xe ./Src/TIMER_program.o
+                0x0000000000001bba                TIMER_vICUInitEnable
+ .text.TIMER_vICUSetTriggerEdge
+                0x0000000000001bc8       0x1e ./Src/TIMER_program.o
+                0x0000000000001bc8                TIMER_vICUSetTriggerEdge
+ .text.TIMER_vICUEnableInterrupt
+                0x0000000000001be6        0x8 ./Src/TIMER_program.o
+                0x0000000000001be6                TIMER_vICUEnableInterrupt
+ .text.TIMER_vICUDisableInterrupt
+                0x0000000000001bee        0x8 ./Src/TIMER_program.o
+                0x0000000000001bee                TIMER_vICUDisableInterrupt
+ .text.TIMER_u16GetICR
+                0x0000000000001bf6        0x6 ./Src/TIMER_program.o
+                0x0000000000001bf6                TIMER_u16GetICR
+ .text.TIMER_vWDTSleep
+                0x0000000000001bfc        0xe ./Src/TIMER_program.o
+                0x0000000000001bfc                TIMER_vWDTSleep
+ .text.TIMER_vWDTEnable
+                0x0000000000001c0a        0x8 ./Src/TIMER_program.o
+                0x0000000000001c0a                TIMER_vWDTEnable
+ .text.TIMER_vWDTDisable
+                0x0000000000001c12        0xa ./Src/TIMER_program.o
+                0x0000000000001c12                TIMER_vWDTDisable
+ .text.TIMER_u8SetCallBack
+                0x0000000000001c1c       0x1c ./Src/TIMER_program.o
+                0x0000000000001c1c                TIMER_u8SetCallBack
+ .text.__vector_11
+                0x0000000000001c38       0x52 ./Src/TIMER_program.o
+                0x0000000000001c38                __vector_11
+ .text.__vector_10
+                0x0000000000001c8a       0x52 ./Src/TIMER_program.o
+                0x0000000000001c8a                __vector_10
+ .text.__vector_9
+                0x0000000000001cdc       0x52 ./Src/TIMER_program.o
+                0x0000000000001cdc                __vector_9
+ .text.__vector_8
+                0x0000000000001d2e       0x52 ./Src/TIMER_program.o
+                0x0000000000001d2e                __vector_8
+ .text.__vector_7
+                0x0000000000001d80       0x52 ./Src/TIMER_program.o
+                0x0000000000001d80                __vector_7
+ .text.__vector_6
+                0x0000000000001dd2       0x52 ./Src/TIMER_program.o
+                0x0000000000001dd2                __vector_6
+ .text.__vector_5
+                0x0000000000001e24       0x52 ./Src/TIMER_program.o
+                0x0000000000001e24                __vector_5
+ .text.__vector_4
+                0x0000000000001e76       0x52 ./Src/TIMER_program.o
+                0x0000000000001e76                __vector_4
+ .text.USART_vInit
+                0x0000000000001ec8       0x1c ./Src/USART_prog.o
+                0x0000000000001ec8                USART_vInit
+ .text.USART_u8SendData
+                0x0000000000001ee4       0x4a ./Src/USART_prog.o
+                0x0000000000001ee4                USART_u8SendData
+ .text.USART_u8ReceiveData
+                0x0000000000001f2e       0x54 ./Src/USART_prog.o
+                0x0000000000001f2e                USART_u8ReceiveData
+ .text.USART_u8SendStringSynch
+                0x0000000000001f82       0x22 ./Src/USART_prog.o
+                0x0000000000001f82                USART_u8SendStringSynch
+ .text.USART_u8SendStringAsynch
+                0x0000000000001fa4       0x3e ./Src/USART_prog.o
+                0x0000000000001fa4                USART_u8SendStringAsynch
+ .text.USART_u8ReceiveBufferSynch
+                0x0000000000001fe2       0x64 ./Src/USART_prog.o
+                0x0000000000001fe2                USART_u8ReceiveBufferSynch
+ .text.USART_u8ReceiveBufferAsynch
+                0x0000000000002046       0x40 ./Src/USART_prog.o
+                0x0000000000002046                USART_u8ReceiveBufferAsynch
+ .text.__vector_13
+                0x0000000000002086       0x7e ./Src/USART_prog.o
+                0x0000000000002086                __vector_13
+ .text.__vector_15
+                0x0000000000002104       0x7e ./Src/USART_prog.o
+                0x0000000000002104                __vector_15
  .text.libgcc.mul
                 0x0000000000002182        0x0 /usr/lib/gcc/avr/7.3.0/avr5/libgcc.a(_udivmodhi4.o)
  .text.libgcc.div
@@ -905,6 +905,7 @@ END GROUP
  .data          0x0000000000800060        0x0 ./Src/EEPROM_prog.o
  .data          0x0000000000800060        0x0 ./Src/EXTI_prog.o
  .data          0x0000000000800060        0x0 ./Src/GIE_prog.o
+ .data          0x0000000000800060        0x0 ./Src/Garden.o
  .data          0x0000000000800060        0x0 ./Src/LDR_prog.o
  .data          0x0000000000800060        0x0 ./Src/LM35_prog.o
  .data          0x0000000000800060        0x0 ./Src/SECURITY_prog.o
@@ -912,7 +913,6 @@ END GROUP
  .data          0x0000000000800060        0x0 ./Src/System_init.o
  .data          0x0000000000800060        0x0 ./Src/TIMER_program.o
  .data          0x0000000000800060        0x0 ./Src/USART_prog.o
- .data          0x0000000000800060        0x0 ./Src/main.o
  .data          0x0000000000800060        0x0 /usr/lib/gcc/avr/7.3.0/avr5/libgcc.a(_udivmodhi4.o)
  .data          0x0000000000800060        0x0 /usr/lib/gcc/avr/7.3.0/avr5/libgcc.a(_udivmodsi4.o)
  .data          0x0000000000800060        0x0 /usr/lib/gcc/avr/7.3.0/avr5/libgcc.a(_divmodsi4.o)
@@ -946,50 +946,50 @@ END GROUP
  .data.CLCD_u8ExtraChar
                 0x0000000000800060        0x8 ./Src/CLCD_prog.o
                 0x0000000000800060                CLCD_u8ExtraChar
+ .data.Flags    0x0000000000800068        0x1 ./Src/Garden.o
+                0x0000000000800068                Flags
+ .data.LDR      0x0000000000800069        0x3 ./Src/Garden.o
+                0x0000000000800069                LDR
+ .data.LM35     0x000000000080006c        0x3 ./Src/Garden.o
+                0x000000000080006c                LM35
  .data.Error_State
-                0x0000000000800068        0x1 ./Src/SECURITY_prog.o
-                0x0000000000800068                Error_State
+                0x000000000080006f        0x1 ./Src/SECURITY_prog.o
+                0x000000000080006f                Error_State
  .data.PassWord_Check_Flag
-                0x0000000000800069        0x1 ./Src/SECURITY_prog.o
-                0x0000000000800069                PassWord_Check_Flag
+                0x0000000000800070        0x1 ./Src/SECURITY_prog.o
+                0x0000000000800070                PassWord_Check_Flag
  .data.UserName_Check_Flag
-                0x000000000080006a        0x1 ./Src/SECURITY_prog.o
-                0x000000000080006a                UserName_Check_Flag
- .data.Tries    0x000000000080006b        0x1 ./Src/SECURITY_prog.o
-                0x000000000080006b                Tries
- .data.Flags    0x000000000080006c        0x1 ./Src/main.o
-                0x000000000080006c                Flags
- .data.LDR      0x000000000080006d        0x3 ./Src/main.o
-                0x000000000080006d                LDR
- .data.LM35     0x0000000000800070        0x3 ./Src/main.o
-                0x0000000000800070                LM35
+                0x0000000000800071        0x1 ./Src/SECURITY_prog.o
+                0x0000000000800071                UserName_Check_Flag
+ .data.Tries    0x0000000000800072        0x1 ./Src/SECURITY_prog.o
+                0x0000000000800072                Tries
  *(.gnu.linkonce.d*)
  *(.rodata)
  *(.rodata*)
- .rodata.UserName_Set.str1.1
-                0x0000000000800073       0x51 ./Src/SECURITY_prog.o
- .rodata.PassWord_Set.str1.1
-                0x00000000008000c4       0x2c ./Src/SECURITY_prog.o
-                                         0x39 (size before relaxing)
- .rodata.UserName_Check.str1.1
-                0x00000000008000f0        0xf ./Src/SECURITY_prog.o
- .rodata.PassWord_Check.str1.1
-                0x00000000008000ff        0xf ./Src/SECURITY_prog.o
- .rodata.Error_TimeOut.str1.1
-                0x000000000080010e        0xb ./Src/SECURITY_prog.o
- .rodata.EEPROM_vInit.str1.1
-                0x0000000000800119       0x22 ./Src/SECURITY_prog.o
- .rodata.Sign_In.str1.1
-                0x000000000080013b       0x40 ./Src/SECURITY_prog.o
  .rodata.Display_Show.str1.1
-                0x000000000080017b       0x1c ./Src/main.o
+                0x0000000000800073       0x1c ./Src/Garden.o
                                          0x21 (size before relaxing)
  .rodata.Garden_vDoor.str1.1
-                0x0000000000800197       0x2d ./Src/main.o
+                0x000000000080008f       0x2d ./Src/Garden.o
  .rodata.main.str1.1
-                0x00000000008001c4       0x24 ./Src/main.o
+                0x00000000008000bc       0x24 ./Src/Garden.o
  .rodata.ISR_EXTI0_INT.str1.1
-                0x00000000008001e8       0x14 ./Src/main.o
+                0x00000000008000e0       0x14 ./Src/Garden.o
+ .rodata.UserName_Set.str1.1
+                0x00000000008000f4       0x51 ./Src/SECURITY_prog.o
+ .rodata.PassWord_Set.str1.1
+                0x0000000000800145       0x2c ./Src/SECURITY_prog.o
+                                         0x39 (size before relaxing)
+ .rodata.UserName_Check.str1.1
+                0x0000000000800171        0xf ./Src/SECURITY_prog.o
+ .rodata.PassWord_Check.str1.1
+                0x0000000000800180        0xf ./Src/SECURITY_prog.o
+ .rodata.Error_TimeOut.str1.1
+                0x000000000080018f        0xb ./Src/SECURITY_prog.o
+ .rodata.EEPROM_vInit.str1.1
+                0x000000000080019a       0x22 ./Src/SECURITY_prog.o
+ .rodata.Sign_In.str1.1
+                0x00000000008001bc       0x40 ./Src/SECURITY_prog.o
  *(.gnu.linkonce.r*)
                 0x00000000008001fc                . = ALIGN (0x2)
                 0x00000000008001fc                _edata = .
@@ -1005,6 +1005,7 @@ END GROUP
  .bss           0x00000000008001fc        0x0 ./Src/EEPROM_prog.o
  .bss           0x00000000008001fc        0x0 ./Src/EXTI_prog.o
  .bss           0x00000000008001fc        0x0 ./Src/GIE_prog.o
+ .bss           0x00000000008001fc        0x0 ./Src/Garden.o
  .bss           0x00000000008001fc        0x0 ./Src/LDR_prog.o
  .bss           0x00000000008001fc        0x0 ./Src/LM35_prog.o
  .bss           0x00000000008001fc        0x0 ./Src/SECURITY_prog.o
@@ -1012,7 +1013,6 @@ END GROUP
  .bss           0x00000000008001fc        0x0 ./Src/System_init.o
  .bss           0x00000000008001fc        0x0 ./Src/TIMER_program.o
  .bss           0x00000000008001fc        0x0 ./Src/USART_prog.o
- .bss           0x00000000008001fc        0x0 ./Src/main.o
  .bss           0x00000000008001fc        0x0 /usr/lib/gcc/avr/7.3.0/avr5/libgcc.a(_udivmodhi4.o)
  .bss           0x00000000008001fc        0x0 /usr/lib/gcc/avr/7.3.0/avr5/libgcc.a(_udivmodsi4.o)
  .bss           0x00000000008001fc        0x0 /usr/lib/gcc/avr/7.3.0/avr5/libgcc.a(_divmodsi4.o)
@@ -1060,42 +1060,43 @@ END GROUP
  .bss.EXTI_CallBack
                 0x0000000000800206        0x6 ./Src/EXTI_prog.o
                 0x0000000000800206                EXTI_CallBack
- .bss.PassWord_Length
-                0x000000000080020c        0x1 ./Src/SECURITY_prog.o
-                0x000000000080020c                PassWord_Length
- .bss.UserName_Length
-                0x000000000080020d        0x1 ./Src/SECURITY_prog.o
-                0x000000000080020d                UserName_Length
- .bss.TIMERS_pvCallBackFunc
-                0x000000000080020e       0x10 ./Src/TIMER_program.o
- .bss.USART_u8State
-                0x000000000080021e        0x1 ./Src/USART_prog.o
- .bss.USART_pvNotificationFunc
-                0x000000000080021f        0x2 ./Src/USART_prog.o
- .bss.USART_u8Index
-                0x0000000000800221        0x1 ./Src/USART_prog.o
- .bss.USART_u8BufferSize
-                0x0000000000800222        0x1 ./Src/USART_prog.o
- .bss.USART_pu8ReceiveData
-                0x0000000000800223        0x2 ./Src/USART_prog.o
- .bss.USART_pu8SendData
-                0x0000000000800225        0x2 ./Src/USART_prog.o
- .bss.Gas_Pin   0x0000000000800227        0x1 ./Src/main.o
-                0x0000000000800227                Gas_Pin
- .bss.Soil_Pin  0x0000000000800228        0x1 ./Src/main.o
-                0x0000000000800228                Soil_Pin
+ .bss.Gas_Pin   0x000000000080020c        0x1 ./Src/Garden.o
+                0x000000000080020c                Gas_Pin
+ .bss.Soil_Pin  0x000000000080020d        0x1 ./Src/Garden.o
+                0x000000000080020d                Soil_Pin
  .bss.Error_Time_Out
-                0x0000000000800229        0x1 ./Src/main.o
-                0x0000000000800229                Error_Time_Out
- .bss.LDR_Prec  0x000000000080022a        0x1 ./Src/main.o
-                0x000000000080022a                LDR_Prec
+                0x000000000080020e        0x1 ./Src/Garden.o
+                0x000000000080020e                Error_Time_Out
+ .bss.LDR_Prec  0x000000000080020f        0x1 ./Src/Garden.o
+                0x000000000080020f                LDR_Prec
  .bss.LM35_Temp
-                0x000000000080022b        0x1 ./Src/main.o
-                0x000000000080022b                LM35_Temp
+                0x0000000000800210        0x1 ./Src/Garden.o
+                0x0000000000800210                LM35_Temp
+ .bss.PassWord_Length
+                0x0000000000800211        0x1 ./Src/SECURITY_prog.o
+                0x0000000000800211                PassWord_Length
+ .bss.UserName_Length
+                0x0000000000800212        0x1 ./Src/SECURITY_prog.o
+                0x0000000000800212                UserName_Length
+ .bss.TIMERS_pvCallBackFunc
+                0x0000000000800213       0x10 ./Src/TIMER_program.o
+ .bss.USART_u8State
+                0x0000000000800223        0x1 ./Src/USART_prog.o
+ .bss.USART_pvNotificationFunc
+                0x0000000000800224        0x2 ./Src/USART_prog.o
+ .bss.USART_u8Index
+                0x0000000000800226        0x1 ./Src/USART_prog.o
+ .bss.USART_u8BufferSize
+                0x0000000000800227        0x1 ./Src/USART_prog.o
+ .bss.USART_pu8ReceiveData
+                0x0000000000800228        0x2 ./Src/USART_prog.o
+ .bss.USART_pu8SendData
+                0x000000000080022a        0x2 ./Src/USART_prog.o
  *(COMMON)
- COMMON         0x000000000080022c       0x2a ./Src/SECURITY_prog.o
-                0x000000000080022c                Check
-                0x0000000000800241                KPD_Press
+ COMMON         0x000000000080022c        0x1 ./Src/Garden.o
+                0x000000000080022c                KPD_Press
+ COMMON         0x000000000080022d       0x29 ./Src/SECURITY_prog.o
+                0x000000000080022d                Check
                 0x0000000000800242                UserName
                 0x0000000000800256                PROVIDE (__bss_end, .)
                 0x00000000000026b0                __data_load_start = LOADADDR (.data)
@@ -1154,6 +1155,7 @@ END GROUP
  .comment       0x0000000000000011       0x12 ./Src/EEPROM_prog.o
  .comment       0x0000000000000011       0x12 ./Src/EXTI_prog.o
  .comment       0x0000000000000011       0x12 ./Src/GIE_prog.o
+ .comment       0x0000000000000011       0x12 ./Src/Garden.o
  .comment       0x0000000000000011       0x12 ./Src/LDR_prog.o
  .comment       0x0000000000000011       0x12 ./Src/LM35_prog.o
  .comment       0x0000000000000011       0x12 ./Src/SECURITY_prog.o
@@ -1161,7 +1163,6 @@ END GROUP
  .comment       0x0000000000000011       0x12 ./Src/System_init.o
  .comment       0x0000000000000011       0x12 ./Src/TIMER_program.o
  .comment       0x0000000000000011       0x12 ./Src/USART_prog.o
- .comment       0x0000000000000011       0x12 ./Src/main.o
 
 .note.gnu.avr.deviceinfo
                 0x0000000000000000       0x3c
@@ -1234,5 +1235,5 @@ END GROUP
 
 .debug_macro
  *(.debug_macro)
-OUTPUT(Garden.elf elf32-avr)
+OUTPUT(Garden_Proj.elf elf32-avr)
 LOAD linker stubs

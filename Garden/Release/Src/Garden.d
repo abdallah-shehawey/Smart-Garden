@@ -1,4 +1,4 @@
-Src/main.o: ../Src/main.c ../Src/../Inc/LIB/STD_MACROS.h \
+Src/Garden.o: ../Src/Garden.c ../Src/../Inc/LIB/STD_MACROS.h \
  ../Src/../Inc/LIB/STD_TYPES.h ../Src/../Inc/System_init.h \
  ../Src/../Inc/LIB/SECURITY_interface.h \
  ../Src/../Inc/LIB/SECURITY_config.h \

@@ -1234,5 +1234,5 @@ END GROUP
 
 .debug_macro
  *(.debug_macro)
-OUTPUT(Garden.elf elf32-avr)
+OUTPUT(Garden_Project.elf elf32-avr)
 LOAD linker stubs

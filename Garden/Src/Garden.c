@@ -1,8 +1,15 @@
-/*
- * main.c
- *
- *  Created on: May 9, 2025
- *      Author: abdallah-shehawey
+/**
+ *===========================================================================*
+ *<<<<<<<<<<<<<<<<<<<<<<<<<<    Eco_Home        >>>>>>>>>>>>>>>>>>>>>>>>>>>>>*
+ **                                                                         **
+ **                  Author : AZEX TEAM                                     **
+ **                  Track  : Embedded System                               **
+ **                  Name   : ECO_HOME                                      **
+ **                  Section: The Garden                                    **
+ **                  MCU    : ATMEGA32                                      **
+ **                  Layer  : App_Layer                                     **
+ **                                                                         **
+ *===========================================================================*
  */
 
 #define F_CPU 8000000UL
